@@ -1,7 +1,10 @@
+import "./index.css";
+import Register from "../src/pages/register";
+
 function App() {
     return (
         <div className="App">
-            <h1>Hello</h1>
+            <Register />
         </div>
     );
 }
