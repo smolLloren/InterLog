@@ -1,0 +1,76 @@
+@import url(../index.css);
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 50px;
+    z-index: 1000;
+    position: fixed;
+    box-shadow: 0px 2px 4px rgba(56, 56, 56, 0.1);
+    background-color: var(--backColor);
+    color: var(--mainTextColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.navbar h1 {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.navbar h1:hover {
+    color: var(--lightColoredText);
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    color: var(--lightColoredText);
+}
+
+.navbar ul {
+    cursor: pointer;
+}
+
+.navbar ul li:hover {
+    color: var(--mainTextColor);
+}
+
+.navbar .navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .navbar-buttons .login-button {
+    background-color: transparent;
+    border: 1px solid var(--lightColoredText);
+    border-radius: 5px;
+    color: var(--lightColoredText);
+    padding: 5px 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.navbar .navbar-buttons .login-button:hover {
+    background-color: var(--mainTextColor);
+    color: var(--backColor);
+}
+
+.navbar .navbar-buttons .create-account-button {
+    padding: 7px 15px;
+    border: 1px solid var(--lightColoredText);
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.navbar .navbar-buttons .create-account-button:hover {
+    background-color: var(--backColor);
+    color: var(--mainTextColor);
+}

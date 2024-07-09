@@ -15,3 +15,9 @@
     font-family: "Poppins", sans-serif;
     transition: 0.2s;
 }
+
+:root {
+    --backColor: #000000;
+    --lightColoredText: #e2e2e2;
+    --mainTextColor: #ffffff;
+}

@@ -1,10 +1,11 @@
 import "./index.css";
-import Register from "../src/pages/register";
+import Navbar from "./Components/navbar";
+import Home from "./Pages/home";
 
 function App() {
     return (
         <div className="App">
-            <Register />
+            <Home />
         </div>
     );
 }
