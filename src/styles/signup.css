@@ -1,0 +1,84 @@
+@import url(../index.css);
+
+.signup-page {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+}
+
+.signup-page .container {
+    width: 500px;
+    height: 300px;
+    background-color: var(--mainTextColor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 20px 30px;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-page h2 {
+    color: var(--backColor);
+    font-size: 1.875rem;
+}
+
+.signup-page .inputs-container {
+    width: 100%;
+}
+
+.signup-page .inputs-container .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.signup-page .inputs-container .inputs label {
+    color: var(--subTextColor);
+}
+
+.signup-page .inputs-container .inputs input {
+    border: 1px solid var(--subTextColor);
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.signup-page button {
+    width: 100%;
+    border: 1px solid var(--subTextColor);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 7px 0;
+    cursor: pointer;
+    background-color: var(--backColor);
+    color: var(--mainTextColor);
+}
+
+.signup-page button:hover {
+    background-color: var(--blackBGHover);
+}
+
+.signup-page p {
+    font-size: 0.688rem;
+}
+
+.signup-page .close-icon {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.signup-page .close-icon:hover {
+    transform: scale(1.02);
+}
+
+

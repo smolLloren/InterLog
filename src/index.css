@@ -20,4 +20,6 @@
     --backColor: #000000;
     --lightColoredText: #e2e2e2;
     --mainTextColor: #ffffff;
+    --subTextColor: rgb(98, 98, 98);
+    --blackBGHover: rgb(52, 52, 52);
 }
