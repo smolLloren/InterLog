@@ -18,10 +18,11 @@
 .navbar h1 {
     cursor: pointer;
     font-weight: 500;
+    color: var(--lightColoredText);
 }
 
 .navbar h1:hover {
-    color: var(--lightColoredText);
+    color: var(--mainTextColor);
 }
 
 .navbar ul {
@@ -32,8 +33,9 @@
     color: var(--lightColoredText);
 }
 
-.navbar ul {
+.navbar li {
     cursor: pointer;
+    color: var(--lightColoredText);
 }
 
 .navbar ul li:hover {
@@ -68,7 +70,6 @@
     font-weight: 500;
     cursor: pointer;
 }
-
 
 .navbar .navbar-buttons .create-account-button:hover {
     background-color: var(--backColor);

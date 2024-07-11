@@ -1,15 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/signup.css";
+import "../styles/login.css";
 import Navbar from "./Navbar";
 
-function Signup() {
+function Login() {
     return (
         <>
             <Navbar />
-            <div className="signup-page">
+            <div className="login-page">
                 <div className="container">
-                    <h2>Sign Up</h2>
+                    <h2>Login</h2>
                     <div className="inputs-container">
                         <div className="inputs">
                             <label htmlFor="email">Email</label>
@@ -19,16 +19,18 @@ function Signup() {
                             <label htmlFor="password">Password</label>
                             <input type="password" />
                         </div>
+                        <button>Login</button>
+                        <p>
+                            Don't have an account?&nbsp;
+                            <Link className="signup-shrtcut" to="/signup">
+                                Create an Account
+                            </Link>
+                        </p>
                     </div>
-                    <button>Create Account</button>
-                    <p>
-                        Already have an account?{" "}
-                        <Link className="login-shrtcut" to='/login'>Login</Link>
-                    </p>
                 </div>
             </div>
         </>
     );
 }
 
-export default Signup;
+export default Login;

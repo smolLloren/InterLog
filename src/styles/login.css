@@ -1,11 +1,11 @@
 @import url(../index.css);
 
-.signup-page {
+.login-page {
     height: 100vh;
     background-color: var(--blackBGHover);
 }
 
-.signup-page .container {
+.login-page .container {
     width: 500px;
     height: 300px;
     background-color: var(--mainTextColor);
@@ -21,34 +21,34 @@
     align-items: center;
 }
 
-.signup-page h2 {
+.login-page h2 {
     color: var(--backColor);
     font-size: 1.875rem;
 }
 
-.signup-page .inputs-container {
+.login-page .inputs-container {
     width: 100%;
 }
 
-.signup-page .inputs-container .inputs {
+.login-page .inputs-container .inputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 15px;
 }
 
-.signup-page .inputs-container .inputs label {
+.login-page .inputs-container .inputs label {
     color: var(--subTextColor);
 }
 
-.signup-page .inputs-container .inputs input {
+.login-page .inputs-container .inputs input {
     border: 1px solid var(--subTextColor);
     border-radius: 5px;
     padding: 5px 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.signup-page button {
+.login-page button {
     width: 100%;
     border: 1px solid var(--subTextColor);
     border-radius: 5px;
@@ -59,16 +59,16 @@
     color: var(--mainTextColor);
 }
 
-.signup-page button:hover {
+.login-page button:hover {
     background-color: var(--blackBGHover);
 }
 
-.signup-page p {
+.login-page p {
     font-size: 0.688rem;
+    display: flex;
+    justify-content: center;
 }
 
-.signup-page .login-shrtcut:hover {
+.login-page .signup-shrtcut:hover {
     text-decoration: underline;
 }
-
-
