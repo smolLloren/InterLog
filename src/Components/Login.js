@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 
 function Login() {
     return (
