@@ -1,30 +1,34 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
 function Navbar() {
-    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
+    const usernameRef = useRef(null);
 
     const toggleDropdown = () => {
-        setDropdownVisible(!dropdownVisible);
-    };
-
-    const closeDropdown = () => {
-        setDropdownVisible(false);
+        setShowDropdown((prevState) => !prevState);
     };
 
     const handleClickOutside = (event) => {
         if (
             dropdownRef.current &&
-            !dropdownRef.current.contains(event.target)
+            !dropdownRef.current.contains(event.target) &&
+            usernameRef.current &&
+            !usernameRef.current.contains(event.target)
         ) {
-            closeDropdown();
+            setShowDropdown(false);
         }
+    };
+
+    const handleDropdownItemClick = () => {
+        setShowDropdown(false);
     };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
+
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
@@ -49,29 +53,29 @@ function Navbar() {
                     <li>Tasks</li>
                 </Link>
             </ul>
-            <h2 className="user-name" onClick={toggleDropdown}>
+            <h2
+                className="user-name"
+                onClick={toggleDropdown}
+                ref={usernameRef}
+            >
                 Username
             </h2>
-            {/* {dropdownVisible && (
+            {showDropdown && (
                 <ul className="profile-dropdown" ref={dropdownRef}>
-                    <li className="dropdown-item" onClick={closeDropdown}>
+                    <li
+                        className="dropdown-item"
+                        onClick={handleDropdownItemClick}
+                    >
                         My Profile
                     </li>
-                    <li className="dropdown-item" onClick={closeDropdown}>
+                    <li
+                        className="dropdown-item"
+                        onClick={handleDropdownItemClick}
+                    >
                         Logout
                     </li>
                 </ul>
-            )} */}
-            <div className="navbar-buttons">
-                <Link to="/login">
-                    <button className="login-button">Login</button>
-                </Link>
-                <Link to="/signup">
-                    <button className="create-account-button">
-                        Create Account
-                    </button>
-                </Link>
-            </div>
+            )}
         </div>
     );
 }
