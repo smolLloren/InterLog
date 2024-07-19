@@ -71,4 +71,8 @@
     text-decoration: underline;
 }
 
+.signup-page .error-message {
+    color: red;
+}
+
 

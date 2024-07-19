@@ -3,6 +3,7 @@ import "./index.css";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import Home from "./Pages/home";
+import Community from "./Pages/Community";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/community" element={<Community />} />
                 </Routes>
             </BrowserRouter>
         </div>

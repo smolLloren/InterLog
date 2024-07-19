@@ -72,3 +72,7 @@
 .login-page .signup-shrtcut:hover {
     text-decoration: underline;
 }
+
+.login-page .error-message {
+    color: red;
+}

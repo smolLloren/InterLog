@@ -1,0 +1,3 @@
+• After loggin in and the user is directed to the community page, if he goes back to the history, it should not show the login/signup page anymore
+
+• Username should be displayed on the navbar after login

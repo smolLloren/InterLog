@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../Firebase/firebase";
 import "../styles/navbar.css";
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
     const usernameRef = useRef(null);
+
+    const navigate = useNavigate();
 
     const toggleDropdown = () => {
         setShowDropdown((prevState) => !prevState);
@@ -33,6 +37,33 @@ function Navbar() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const handleLogout = async () => {
+        try {
+            const user = auth.currentUser;
+            if (user) {
+                console.log("User's email before logout: ", user.email);
+            } else {
+                console.log("No user currently logged in");
+            }
+
+            await signOut(auth);
+
+            const loggedOutUser = auth.currentUser;
+            if (!loggedOutUser) {
+                console.log("No user is currently logged in");
+            } else {
+                console.log(
+                    "Logout failed, current user's email: ",
+                    loggedOutUser.email
+                );
+            }
+
+            navigate("/home");
+        } catch (error) {
+            console.log("Signout failed", error);
+        }
+    };
 
     return (
         <div className="navbar">
@@ -70,7 +101,10 @@ function Navbar() {
                     </li>
                     <li
                         className="dropdown-item"
-                        onClick={handleDropdownItemClick}
+                        onClick={() => {
+                            handleDropdownItemClick();
+                            handleLogout();
+                        }}
                     >
                         Logout
                     </li>
