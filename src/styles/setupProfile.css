@@ -1,0 +1,135 @@
+@import url(../index.css);
+
+.setup-profile {
+    height: 100vh;
+    padding-top: 80px;
+    background-image: url(../Assets//landing\ page\ background\ img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setup-profile .main-container {
+    width: 600px;
+    height: auto;
+    background-color: var(--mainTextColor);
+    border: 1px solid var(--blackBGHover);
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.setup-profile .main-container .header {
+    display: flex;
+    flex-direction: column;
+}
+
+.setup-profile .main-container .header h2 {
+    color: var(--blackBGHover);
+    font-size: 20px;
+}
+
+.setup-profile .main-container .header p {
+    font-size: 12px;
+}
+
+.setup-profile .main-container .inputs-container {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.setup-profile .main-container .inputs-container .profile-img-container {
+    min-width: 100px;
+    height: 100px;
+    background-color: var(--lightColoredText);
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setup-profile .main-container .inputs-container .profile-img-container .edit-profileIMG-icon {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    color: var(--blackBGHover);
+}
+
+.setup-profile .main-container .inputs-container .profile-img-container .edit-profileIMG-icon:hover {
+    transform: scale(1.02);
+}
+
+.setup-profile .main-container .inputs-container .profile-img-container .profile-icon {
+    height: 30px;
+    width: 30px;
+    color: var(--blackBGHover);
+    cursor: pointer;
+}
+
+
+.setup-profile .main-container .inputs-container .profile-img-container .profile-icon:hover {
+    transform: scale(1.1);
+    color: rgb(117, 117, 117);
+}
+
+.setup-profile .main-container .inputs-container .input-fields {
+    display: flex;
+    flex-direction: column;
+    font-size: 14;
+    flex: 1;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.setup-profile .main-container .inputs-container .input-fields .inputs-group {
+    display: flex;
+    gap: 10px;
+}
+
+.setup-profile .main-container .inputs-container .input-fields input {
+    padding: 5px 10px;
+    border: 1px solid var(--blackBGHover);
+    border-radius: 5px;
+    color: var(--blackBGHover);
+    width: 100%;
+}
+
+.setup-profile .main-container .inputs-container .input-fields p {
+    color: var(--blackBGHover);
+    padding: 5px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--blackBGHover);
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.setup-profile .main-container .submit-button {
+    padding: 5px 0;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: var(--blackBGHover);
+    color: var(--mainTextColor);
+    cursor: pointer;
+}
+
+.setup-profile .main-container .submit-button:hover {
+    background-color: rgb(78, 78, 78);
+}
+
