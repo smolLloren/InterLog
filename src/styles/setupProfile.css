@@ -44,10 +44,11 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    position: relative;
 }
 
 .setup-profile .main-container .inputs-container .profile-img-container {
-    min-width: 100px;
+    width: 100px;
     height: 100px;
     background-color: var(--lightColoredText);
     border-radius: 50%;
@@ -56,31 +57,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.setup-profile .main-container .inputs-container .profile-img-container .edit-profileIMG-icon {
-    position: absolute;
-    right: 0;
-    top: 10px;
-    height: 20px;
-    width: 20px;
+    flex-direction: column;
+    font-size: 11px;
+    gap: 5px;
     cursor: pointer;
-    color: var(--blackBGHover);
+    overflow: hidden;
 }
 
-.setup-profile .main-container .inputs-container .profile-img-container .edit-profileIMG-icon:hover {
-    transform: scale(1.02);
+.setup-profile
+    .main-container
+    .inputs-container
+    .profile-img-container
+    .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.setup-profile .main-container .inputs-container .profile-img-container .profile-icon {
+.setup-profile
+    .main-container
+    .inputs-container
+    .profile-img-container
+    .profile-icon {
     height: 30px;
     width: 30px;
     color: var(--blackBGHover);
-    cursor: pointer;
 }
 
-
-.setup-profile .main-container .inputs-container .profile-img-container .profile-icon:hover {
+.setup-profile
+    .main-container
+    .inputs-container
+    .profile-img-container:hover
+    .profile-icon {
     transform: scale(1.1);
     color: rgb(117, 117, 117);
 }
@@ -90,13 +98,15 @@
     flex-direction: column;
     font-size: 14;
     flex: 1;
-    gap: 10px;
+    gap: 15px;
     padding: 10px 0;
+    position: relative;
 }
 
 .setup-profile .main-container .inputs-container .input-fields .inputs-group {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    position: relative;
 }
 
 .setup-profile .main-container .inputs-container .input-fields input {
@@ -120,6 +130,43 @@
     cursor: pointer;
 }
 
+.setup-profile .main-container .inputs-container .input-fields .dpHeader {
+    position: relative;
+}
+
+.setup-profile .main-container .inputs-container .input-fields .dropdown {
+    position: absolute;
+    top: 100%;
+    width: 48%;
+    border: 1px solid var(--blackBGHover);
+    border-radius: 5px;
+    background-color: white;
+    z-index: 200;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.setup-profile
+    .main-container
+    .inputs-container
+    .input-fields
+    .dropdown
+    .dp-item {
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.setup-profile
+    .main-container
+    .inputs-container
+    .input-fields
+    .dropdown
+    .dp-item:hover {
+    background-color: var(--lightColoredText);
+}
+
 .setup-profile .main-container .submit-button {
     padding: 5px 0;
     font-weight: 500;
@@ -132,4 +179,3 @@
 .setup-profile .main-container .submit-button:hover {
     background-color: rgb(78, 78, 78);
 }
-
