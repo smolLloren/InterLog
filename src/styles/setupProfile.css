@@ -42,7 +42,7 @@
 .setup-profile .main-container .inputs-container {
     padding: 10px 20px;
     display: flex;
-    align-items: center;
+    align-items: center;    
     gap: 40px;
     position: relative;
 }

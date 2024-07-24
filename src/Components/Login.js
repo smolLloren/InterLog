@@ -14,7 +14,8 @@ function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const user = auth.currentUser;
+        const userBeforeLogin = auth.currentUser;
+        console.log("User before login attemp: ", userBeforeLogin);
 
         try {
             await signInWithEmailAndPassword(auth, email, password);

@@ -4,6 +4,7 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     sendEmailVerification,
+    signOut,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase";
 import "../styles/signup.css";
@@ -35,6 +36,15 @@ function Signup() {
             //Check Email Verification
             const user = userCredential.user;
             console.log("Email Verified: ", user.emailVerified);
+
+            //User Logout after Signup
+            await signOut(auth);
+            console.log("User Signed Out");
+
+            //No user logged in verifications
+            const currentUser = auth.currentUser;
+            console.log("Current user after logout: ", currentUser);
+
             navigate("/login");
         } catch (error) {
             if (error.code === "auth/weak-password") {

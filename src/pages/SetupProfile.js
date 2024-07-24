@@ -3,15 +3,44 @@ import "../styles/setupProfile.css";
 import Navbar from "../Components/navbar";
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoMdCloseCircle } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../Firebase/firebase";
 
 function SetupProfile() {
-    const [showDropdown, setShowDropdown] = useState(false);
+    const [firstName, setFirstName] = useState("");
+    const [middleName, setMiddleName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [selectedGender, setSelectedGender] = useState("Gender");
+    const [birthday, setBirthday] = useState("");
+    const [program, setProgram] = useState("");
+    const [yearLevel, setYearLevel] = useState("");
     const [profileImage, setProfileImage] = useState(null);
+    const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
     const dropdownHeaderRef = useRef(null);
     const fileInputRef = useRef(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const docRef = await addDoc(collection(db, "Students"), {
+                FirstName: firstName,
+                MiddleName: middleName,
+                LastName: lastName,
+                Gender: selectedGender,
+                Birthday: birthday,
+                Program: program,
+                YearLevel: yearLevel,
+                ProfileImage: profileImage,
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    };
 
     const toggleDropdown = () => {
         setShowDropdown((prevState) => !prevState);
@@ -96,9 +125,21 @@ function SetupProfile() {
                             />
                         </div>
                         <div className="input-fields">
-                            <input type="text" placeholder="First Name" />
-                            <input type="text" placeholder="Middle Name" />
-                            <input type="text" placeholder="Last Name" />
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Middle Name"
+                                onChange={(e) => setMiddleName(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
                             <div className="inputs-group gender-birthdate">
                                 <p
                                     className="dpHeader gender-header"
@@ -136,18 +177,30 @@ function SetupProfile() {
                                 <input
                                     type="text"
                                     placeholder="Birthday (mm/dd/yyyy)"
+                                    onChange={(e) =>
+                                        setBirthday(e.target.value)
+                                    }
                                 />
                             </div>
                             <div className="inputs-group program-yrlvl">
                                 <input
                                     type="text"
                                     placeholder="Program (ex. BSCE)"
+                                    onChange={(e) => setProgram(e.target.value)}
                                 />
-                                <input type="text" placeholder="Year level" />
+                                <input
+                                    type="text"
+                                    placeholder="Year level"
+                                    onChange={(e) =>
+                                        setYearLevel(e.target.value)
+                                    }
+                                />
                             </div>
                         </div>
                     </div>
-                    <button className="submit-button">Submit</button>
+                    <button className="submit-button" onClick={handleSubmit}>
+                        Submit
+                    </button>
                 </div>
             </div>
         </>
